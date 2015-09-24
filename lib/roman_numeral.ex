@@ -11,10 +11,9 @@ defmodule RomanNumeral do
   defp reductio(letters), do: letters
 
   # convert to I's
-  defp expandio("IV"), do: "IIII"
-  defp expandio("V"), do: "IIIII"
-  defp expandio(letters) do
-    letters
-  end
+  defp expandio("IV"),    do: String.duplicate("I", 4)
+  defp expandio("V"),     do: String.duplicate("I", 5)
+  defp expandio("IX"),    do: String.duplicate("I", 9)
+  defp expandio(letters), do: letters
 end
 

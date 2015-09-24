@@ -34,4 +34,8 @@ defmodule RomanNumeralTest do
   test "V + IV = IX" do
     assert roman_sum("V", "IV") == "IX"
   end
+
+  test "IX + I = X" do
+    assert roman_sum("IX", "I") == "X"
+  end
 end
