@@ -4,10 +4,11 @@ defmodule RomanNumeral do
     reductio(xy)
   end
 
-  defp reductio("IIII"), do: "IV"
-  defp reductio("IIIII"), do: "V"
-  defp reductio("IIIIIIIII"), do: "IX"
   defp reductio("IIIIIIIIII"), do: "X"
+  defp reductio("IIIIIIIII"), do: "IX"
+  defp reductio(<<"IIIII", rest::binary>>), do: "V" <> rest
+  defp reductio("IIIII"), do: "V"
+  defp reductio("IIII"), do: "IV"
   defp reductio(letters), do: letters
 
   # convert to I's
