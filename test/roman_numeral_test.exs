@@ -42,4 +42,12 @@ defmodule RomanNumeralTest do
   test "III + III = VI" do
     assert roman_sum("III", "III") == "VI"
   end
+
+  test "VI + II = VIII" do
+    assert roman_sum("VI", "II") == "VIII"
+  end
+
+  test "IV + VI = X" do
+    assert roman_sum("IV", "VI") == "X"
+  end
 end
