@@ -21,6 +21,7 @@ defmodule RomanNumeral do
   defp expandio(<<"V", rest::binary>>), do: @five_i <> expandio(rest)
   defp expandio("IX"),    do: String.duplicate("I", 9)
   defp expandio("X"),    do: @ten_i
+  defp expandio(<<"X", rest::binary>>), do: @ten_i <> expandio(rest)
   defp expandio(letters), do: letters
 end
 

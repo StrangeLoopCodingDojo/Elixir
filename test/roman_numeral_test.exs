@@ -3,10 +3,6 @@ defmodule RomanNumeralTest do
 
   import RomanNumeral
 
-  test "the truth" do
-    assert 1 + 1 == 2
-  end
-
   test "I + I = II" do
     assert roman_sum("I", "I") == "II"
   end
@@ -50,8 +46,18 @@ defmodule RomanNumeralTest do
   test "IV + VI = X" do
     assert roman_sum("IV", "VI") == "X"
   end
-  
+
+  test "XIV" do
+    assert roman_sum("X", "IV") == "XIV"
+    assert roman_sum("IV", "X") == "XIV"
+  end
+
   test "X + V = XV" do
     assert roman_sum("X", "V") == "XV"
+  end
+
+  test "XXX" do
+    assert roman_sum("X", "XX") == "XXX"
+    assert roman_sum("V", "XXV") == "XXX"
   end
 end
